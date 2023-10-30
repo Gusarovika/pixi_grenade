@@ -27,6 +27,8 @@ export class GameScene extends Container implements IScene {
 
 		// Создаем контейнер для игрока и гранат
 		this.world = new World(this.eventManager, Manager.width, Manager.height);
+		console.log(Manager.width, Manager.height);
+
 		// Inside assets.ts we have a line that says `"Clampy from assets.ts!": "./clampy.png",`
 		// this.clampy = Sprite.from('Clampy from assets.ts!');
 

@@ -1,5 +1,5 @@
 import { World } from '../game/World';
-import { Texture } from 'pixi.js';
+import { ObservablePoint, Texture } from 'pixi.js';
 import { Grenade } from './Grenade';
 import { Aim } from './Aim';
 import { Textures, Resource } from '../ENUMS';
@@ -27,21 +27,19 @@ export class Player extends Character {
 	onLep(text: string) {
 		console.log('LEDP PLAYER', text);
 	}
-	throwGrenade(position: { x: number; y: number }) {
-		const grenade = new Grenade(this.x, this.y, position, this.world, Texture.from(Textures.Grenade));
+	throwGrenade(position: ObservablePoint, power: number) {
+		const grenade = new Grenade(this.x, this.y, this.world, Texture.from(Textures.Grenade));
 
-		console.log('trowGrenade', grenade);
 		this.world.createGameObject(grenade);
 		this.world.emit('ledp', 'player world');
 
-		grenade.launch();
+		grenade.launch(position, power);
 		this.aim.position.set(position.x, position.y);
 		this.toggleAim(true);
 		this.switchAnimation(Resource.PlayerThrow, false);
 	}
 
 	setAim() {
-		console.log('PlayerParent', this.parent);
 		// this.aim = new Aim(this.x, this.y, this.world, Texture.from(Textures.Aim));
 		this.aim.alpha = 0;
 		this.world.createGameObject(this.aim);
@@ -51,6 +49,6 @@ export class Player extends Character {
 		this.aim.alpha = opacity;
 	}
 	override idle() {
-		this.switchAnimation(Resource.PlayerIdle, true);
+		this.switchAnimation('PlayerIdle', true);
 	}
 }

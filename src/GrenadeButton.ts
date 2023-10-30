@@ -13,22 +13,14 @@ export class GrenadeButton extends PIXI.Sprite {
 		const texture = PIXI.Texture.from('grenade.png');
 		super(texture);
 
-		// Позиционирование кнопки гранаты
-		// this.position.set(10 + 110 * (power - 1), 10);
-
-		// this.intera /ctive = true;
-		// this.buttonMode = true;
-
 		this.on('pointerdown', (targt: any) => {
 			console.log('pointerdown', targt);
 			this.uiManager.selectGrenade(this);
 		});
 		this.on('pointerup', () => {
-			// console.log('pointerup', this.power);
 			if (this.isSelected) this.uiManager.deselectGrenade(this.power * 4);
 		});
 		this.on('pointerupoutside', () => {
-			// console.log('pointerup', this.power);
 			if (this.isSelected) this.uiManager.deselectGrenade(this.power * 4);
 		});
 		this.eventMode = 'static';

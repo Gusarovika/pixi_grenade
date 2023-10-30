@@ -28,21 +28,15 @@ export class World extends Container {
 
 	constructor(eventManager: EventManager, width: number, height: number) {
 		super();
-		// const playerTexture = Texture.from('PlayerIdle');
-		// const enemyTexture = Texture.from('EnemyIdle');
-		// console.log('player text', playerTexture);
 
 		this.player = new Player(this, width * 0.7, height * 0.5);
 		this.enemy = new Enemy(this, width * 0.35, height * 0.46);
 		this.floor = Sprite.from('floor');
 		this.eventManager = eventManager;
-		this.width = width;
-		this.height = height;
-		// this.skew.set(0, 0);
-		// this.grenade = grenade
-		// EE.on('ledp', () => {
-		// 	console.log('EEE', this, SystemManager);
-		// });
+		this._width = width;
+		this._height = height;
+		console.log('bag', this._width, width);
+
 		this.eventMode = 'dynamic';
 		this.on('ledp', (text) => {
 			console.log('DDDEEE', text);
@@ -61,7 +55,6 @@ export class World extends Container {
 		this.enemy.setAnimation('EnemyIdle');
 
 		// this.gameObjects.push(this.player);
-		console.log('init', this);
 	}
 	restart() {}
 	onExplosion() {
@@ -81,23 +74,17 @@ export class World extends Container {
 	}
 	setBackground() {
 		this.floor.anchor.set(0.5);
-		this.floor.x = 400;
+		this.floor.x = this._width / 2;
 		this.floor.y = 600;
-		// this.floor.pivot.set(0.5, 0.5);
+		this.floor.pivot.set(0.5, 0.5);
 		this.floor.scale.set(1, 1);
 		this.addChild(this.floor);
 	}
 	onThrow(power: number) {
 		this.gameState = GameState.GrenadeLaunched;
-		// console.log('TROE', this.player);
-		const finalPos = this.calculateGrenadeFinalPosition(
-			this.player.x,
-			this.player.y,
-			this.enemy.x,
-			this.enemy.y,
-			power
-		);
-		this.player.throwGrenade(finalPos);
+
+		// console.log(this.enemy.position);
+		this.player.throwGrenade(this.enemy.position, power);
 	}
 
 	testCollision(object1: GameObject, object2: GameObject): boolean {
@@ -121,24 +108,5 @@ export class World extends Container {
 				console.log('Collision');
 			}
 		}
-	}
-	calculateGrenadeFinalPosition(
-		playerX: number,
-		playerY: number,
-		enemyX: number,
-		enemyY: number,
-		throwPower: number
-	): { x: number; y: number } {
-		const deltaX = enemyX - playerX;
-		const deltaY = enemyY - playerY;
-
-		// Расчет угла между игроком и врагом
-		const throwAngle = Math.atan2(deltaY, deltaX);
-
-		// Финальные координаты гранаты
-		const finalX = playerX + throwPower * Math.cos(throwAngle);
-		const finalY = playerY + throwPower * Math.sin(throwAngle);
-
-		return { x: finalX, y: finalY };
 	}
 }

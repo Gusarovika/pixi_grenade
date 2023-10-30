@@ -11,6 +11,7 @@ export const manifest: ResolverManifest = {
 				"Grenade": 'grenade.png',
 				"Aim": 'cross.png',
 				"floor": 'floor.png',
+				"particle": 'particle.png'
 			},
 		},
 		{
