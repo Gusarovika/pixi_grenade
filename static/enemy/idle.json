@@ -1,0 +1,255 @@
+{
+	"frames": {
+		"GirlIdle__000.png": {
+			"frame": {
+				"x": 0,
+				"y": 0,
+				"w": 289,
+				"h": 500
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 289,
+				"h": 500
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"GirlIdle__001.png": {
+			"frame": {
+				"x": 0,
+				"y": 500,
+				"w": 288,
+				"h": 499
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 1,
+				"y": 1,
+				"w": 288,
+				"h": 499
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"GirlIdle__009.png": {
+			"frame": {
+				"x": 289,
+				"y": 0,
+				"w": 288,
+				"h": 499
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 1,
+				"y": 1,
+				"w": 288,
+				"h": 499
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"GirlIdle__002.png": {
+			"frame": {
+				"x": 0,
+				"y": 999,
+				"w": 286,
+				"h": 499
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 3,
+				"y": 1,
+				"w": 286,
+				"h": 499
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"GirlIdle__008.png": {
+			"frame": {
+				"x": 288,
+				"y": 500,
+				"w": 286,
+				"h": 499
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 3,
+				"y": 1,
+				"w": 286,
+				"h": 499
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"GirlIdle__003.png": {
+			"frame": {
+				"x": 577,
+				"y": 0,
+				"w": 285,
+				"h": 498
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 4,
+				"y": 2,
+				"w": 285,
+				"h": 498
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"GirlIdle__007.png": {
+			"frame": {
+				"x": 0,
+				"y": 1498,
+				"w": 285,
+				"h": 498
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 4,
+				"y": 2,
+				"w": 285,
+				"h": 498
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"GirlIdle__004.png": {
+			"frame": {
+				"x": 286,
+				"y": 999,
+				"w": 284,
+				"h": 497
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 5,
+				"y": 3,
+				"w": 284,
+				"h": 497
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"GirlIdle__006.png": {
+			"frame": {
+				"x": 574,
+				"y": 499,
+				"w": 284,
+				"h": 497
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 5,
+				"y": 3,
+				"w": 284,
+				"h": 497
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"GirlIdle__005.png": {
+			"frame": {
+				"x": 862,
+				"y": 0,
+				"w": 283,
+				"h": 496
+			},
+			"rotated": false,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 6,
+				"y": 4,
+				"w": 283,
+				"h": 496
+			},
+			"sourceSize": {
+				"w": 290,
+				"h": 500
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		}
+	},
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7",
+		"image": "idle.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1145,
+			"h": 1996
+		},
+		"scale": 1
+	}
+}
