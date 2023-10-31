@@ -3,5 +3,6 @@ declare namespace GlobalMixins {
 		lep: [string];
 		ledp: [string];
 		player: [string];
+		death: [string];
 	}
 }

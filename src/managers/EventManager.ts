@@ -11,7 +11,7 @@ export class EventManager {
 		this.listeners[eventName].push(boundListener);
 	}
 
-	emit(eventName: string, eventData: any) {
+	emit(eventName: string, eventData?: any) {
 		if (this.listeners[eventName]) {
 			for (const listener of this.listeners[eventName]) {
 				listener(eventData);

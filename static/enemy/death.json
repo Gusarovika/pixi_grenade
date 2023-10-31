@@ -1,0 +1,255 @@
+{
+  "frames": {
+    "Dead__000.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 292,
+        "h": 494
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 27,
+        "y": 37,
+        "w": 292,
+        "h": 494
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dead__005.png": {
+      "frame": {
+        "x": 0,
+        "y": 494,
+        "w": 491,
+        "h": 324
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 42,
+        "y": 239,
+        "w": 491,
+        "h": 324
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dead__006.png": {
+      "frame": {
+        "x": 292,
+        "y": 0,
+        "w": 479,
+        "h": 319
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 34,
+        "y": 255,
+        "w": 479,
+        "h": 319
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dead__004.png": {
+      "frame": {
+        "x": 0,
+        "y": 985,
+        "w": 475,
+        "h": 315
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 44,
+        "y": 225,
+        "w": 475,
+        "h": 315
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dead__001.png": {
+      "frame": {
+        "x": 0,
+        "y": 1460,
+        "w": 322,
+        "h": 462
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 36,
+        "y": 75,
+        "w": 322,
+        "h": 462
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dead__002.png": {
+      "frame": {
+        "x": 315,
+        "y": 985,
+        "w": 386,
+        "h": 454
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 42,
+        "y": 106,
+        "w": 386,
+        "h": 454
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dead__003.png": {
+      "frame": {
+        "x": 324,
+        "y": 479,
+        "w": 435,
+        "h": 384
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 54,
+        "y": 166,
+        "w": 435,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dead__007.png": {
+      "frame": {
+        "x": 292,
+        "y": 0,
+        "w": 479,
+        "h": 319
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 34,
+        "y": 255,
+        "w": 479,
+        "h": 319
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dead__008.png": {
+      "frame": {
+        "x": 292,
+        "y": 0,
+        "w": 479,
+        "h": 319
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 34,
+        "y": 255,
+        "w": 479,
+        "h": 319
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dead__009.png": {
+      "frame": {
+        "x": 292,
+        "y": 0,
+        "w": 479,
+        "h": 319
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 34,
+        "y": 255,
+        "w": 479,
+        "h": 319
+      },
+      "sourceSize": {
+        "w": 578,
+        "h": 599
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "death.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 708,
+      "h": 1922
+    },
+    "scale": 1
+  }
+}

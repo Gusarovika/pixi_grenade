@@ -6,16 +6,11 @@ import { GameObject } from './GameObject';
 export class Character extends GameObject {
 	private animatedSprite: AnimatedSprite | null = null;
 
-	constructor(world: World, x: number, y: number) {
-		super(world, x, y); // Вызываем конструктор базового класса
-		this.scale.set(0.4, 0.4);
+	constructor(world: World, x: number, y: number, scale: { x: number; y: number }) {
+		super(world, x, y, scale); // Вызываем конструктор базового класса
 	}
 
 	async getTexture(animationResource: string): Promise<Texture[]> {
-		// const playerAtlas = Assets.get('PlayerIdle');
-		// console.log('charactr', playerAtlas);
-		// if (this.isSprite) {
-
 		const sheet = Assets.get(animationResource);
 		const resource = Object.keys(sheet.textures).sort();
 		const textureArray: Texture[] = [];

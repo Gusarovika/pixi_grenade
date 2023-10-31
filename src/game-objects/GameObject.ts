@@ -6,14 +6,11 @@ export class GameObject extends Container {
 	// protected sprite: Sprite; // Спрайт объекта
 	world: World;
 
-	constructor(world: World, x: number, y: number) {
+	constructor(world: World, x: number, y: number, scale: { x: number; y: number }) {
 		super();
-
-		// this.texture = texture;
-		// this.sprite = new Sprite(this.texture);
-
 		this.world = world;
 		this.position.set(x, y);
+		this.scale.set(scale.x, scale.y);
 		this.pivot.set(0.5, 0.5);
 	}
 }

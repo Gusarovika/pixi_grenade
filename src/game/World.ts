@@ -1,16 +1,19 @@
 // import { Resource } from './../ENUMS';
-import { Container, Sprite } from 'pixi.js';
+import { Container, Sprite, Texture, AnimatedSprite } from 'pixi.js';
 import { Player } from '../game-objects/Player';
 import { EventManager } from '../managers/EventManager';
 import { GameObject } from '../game-objects/GameObject';
 import { Enemy } from '../game-objects/Enemy';
-import EventEmitter from 'eventemitter3';
+import { Grenade } from '../game-objects/Grenade';
+import { worldConfig, enemyConfig, playerConfig } from '../gameConfig';
+import * as particles from '@pixi/particle-emitter';
+import * as particleSettings from '../particle-emitters/emitter.json';
 
-const EE = new EventEmitter();
 enum GameState {
 	Charge,
 	GrenadeLaunched,
 	PlayerTurn,
+	GameEnd,
 }
 
 export class World extends Container {
@@ -18,50 +21,59 @@ export class World extends Container {
 	private enemy: Enemy;
 	private floor: Sprite;
 	// public width: number;
-
+	private enemyDamaged: boolean = false;
+	public explosionContainer: Container;
 	private gameState: GameState;
 	public eventManager: EventManager;
-	public grenade: GameObject | null = null;
+	public grenade: Grenade | null = null;
 	public gameObjects: GameObject[] = []; // Список брошенных гранат
-
+	public emitter: particles.Emitter;
 	// With getters but not setters, these variables become read-only
 
-	constructor(eventManager: EventManager, width: number, height: number) {
+	constructor(eventManager: EventManager) {
 		super();
 
-		this.player = new Player(this, width * 0.7, height * 0.5);
-		this.enemy = new Enemy(this, width * 0.35, height * 0.46);
-		this.floor = Sprite.from('floor');
+		this.enemy = new Enemy(this, worldConfig.enemyPosition.x, worldConfig.enemyPosition.y, enemyConfig.scale);
+		this.player = new Player(this, worldConfig.playerPosition.x, worldConfig.playerPosition.y, playerConfig.scale);
+		this.floor = Sprite.from(worldConfig.floor);
 		this.eventManager = eventManager;
-		this._width = width;
-		this._height = height;
-		console.log('bag', this._width, width);
+		const explosionContainer = new Container();
+		explosionContainer.zIndex = 100;
+		const upgradedConfig = particles.upgradeConfig(particleSettings, 'particle');
 
-		this.eventMode = 'dynamic';
-		this.on('ledp', (text) => {
-			console.log('DDDEEE', text);
-		});
+		this.addChild(explosionContainer);
+		// explosionContainer.position.set(400, 400);
+		this.explosionContainer = explosionContainer; // Store a reference for later use
+
+		this.emitter = new particles.Emitter(explosionContainer, upgradedConfig);
+		// this.emitter.autoUpdate = true;
+		// this.emitter.emit = true;
+
 		this.gameState = GameState.PlayerTurn;
 		this.eventManager.subscribe('explosion', this.onExplosion, this);
 		this.eventManager.subscribe('throw', this.onThrow, this);
+		this.eventManager.subscribe('select', this.onSelect, this);
+
+		this.enemyDamaged = false;
 	}
 
 	init() {
 		this.setBackground();
+		this.addChild(this.explosionContainer);
 		this.createGameObject(this.player);
-		this.player.setAnimation('PlayerIdle');
+		this.player.setAnimation(playerConfig.animations.idle);
 		this.createGameObject(this.enemy);
 
-		this.enemy.setAnimation('EnemyIdle');
+		this.enemy.setAnimation(enemyConfig.animations.idle);
 
 		// this.gameObjects.push(this.player);
 	}
 	restart() {}
 	onExplosion() {
-		this.gameState = GameState.PlayerTurn;
-		this.player.toggleAim(false);
-		this.emit('player', 'fff');
-		EE.emit('player', ' send to player ');
+		if (this.gameState === GameState.GrenadeLaunched) {
+			this.gameState = GameState.PlayerTurn;
+			this.player.toggleAim(false);
+		}
 	}
 	createGameObject(go: GameObject) {
 		this.addChild(go);
@@ -74,17 +86,21 @@ export class World extends Container {
 	}
 	setBackground() {
 		this.floor.anchor.set(0.5);
-		this.floor.x = this._width / 2;
-		this.floor.y = 600;
-		this.floor.pivot.set(0.5, 0.5);
-		this.floor.scale.set(1, 1);
+		this.floor.x = worldConfig.floorPosition.x;
+		this.floor.y = worldConfig.floorPosition.y;
+		this.floor.scale = worldConfig.floorScale;
 		this.addChild(this.floor);
 	}
-	onThrow(power: number) {
+	onThrow(params: { power: number; texture: Texture; explosion: AnimatedSprite; damage: number }) {
 		this.gameState = GameState.GrenadeLaunched;
+		this.enemyDamaged = false;
 
-		// console.log(this.enemy.position);
-		this.player.throwGrenade(this.enemy.position, power);
+		this.player.throwGrenade(this.enemy.position, params.power, params.texture, params.explosion, params.damage);
+	}
+	onSelect() {
+		if (this.gameState === GameState.PlayerTurn) {
+			this.gameState = GameState.Charge;
+		}
 	}
 
 	testCollision(object1: GameObject, object2: GameObject): boolean {
@@ -101,11 +117,17 @@ export class World extends Container {
 
 	update() {
 		if (this.gameState === GameState.GrenadeLaunched && this.grenade) {
-			let isCollide: boolean = this.testCollision(this.enemy, this.grenade);
-			if (isCollide) {
-				isCollide = false;
-
-				console.log('Collision');
+			if (!this.enemyDamaged) {
+				let enemyDamaged: boolean = this.testCollision(this.enemy, this.grenade);
+				if (enemyDamaged) {
+					this.enemyDamaged = true;
+					const health = this.enemy.toggleHealthBar(this.grenade.damage);
+					if (health <= 0) {
+						this.gameState = GameState.GameEnd;
+						this.enemy.switchAnimation(enemyConfig.animations.death, false);
+						this.player.switchAnimation(playerConfig.animations.jump, false);
+					}
+				}
 			}
 		}
 	}

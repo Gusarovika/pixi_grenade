@@ -1,44 +1,37 @@
+import { Ticker } from 'pixi.js';
 import { World } from '../game/World';
-// import { Texture, Assets, AnimatedSprite } from 'pixi.js';
 import { Character } from './Character';
-// import { Resource } from './ENUMS';
+import { ProgressBar } from '@pixi/ui';
+import { progressBarConfig } from '../gameConfig';
+
+const config = progressBarConfig;
 
 export class Enemy extends Character {
-	// private animatedSprite: AnimatedSprite | null = null;
-	constructor(world: World, x: number, y: number) {
-		super(world, x, y); // Вызываем конструктор базового класса
-		this.scale.set(0.15, 0.15);
+	healthBar: ProgressBar;
 
-		// console.log(animatedSprite);
+	constructor(world: World, x: number, y: number, scale: { x: number; y: number }) {
+		super(world, x, y, scale);
+		this.healthBar = new ProgressBar({ bg: config.bg, fill: config.fill, progress: config.initProgress });
+		this.healthBar.scale.set(config.scale.x, config.scale.y);
 
-		// this.animatedSprite = new AnimatedSprite([]);
-		// this.addChild(this.animatedSprite);
+		this.healthBar.y = config.position.y;
+		this.healthBar.x = config.position.x;
+
+		this.addChild(this.healthBar);
+		this.healthBar.progress = config.initProgress;
 	}
-	// async setAnimation() {
-	// 	const sheet = await Assets.load(Resource.EnemyIdle);
-	// 	const resource = Object.keys(sheet.textures).sort();
-	// 	const textureArray: Texture[] = [];
-	// 	console.log(Object.keys(sheet.textures).sort());
 
-	// 	for (let i = 0; i < resource.length; i++) {
-	// 		const texture = Texture.from(resource[i]);
+	public toggleHealthBar(damage: number): number {
+		const ticker = new Ticker();
+		ticker.add(() => {
+			this.healthBar.progress -= 1;
+			damage -= 1;
+			if (damage <= 0) {
+				ticker.stop();
+			}
+		});
+		ticker.start();
 
-	// 		textureArray.push(texture);
-	// 	}
-
-	// 	this.animatedSprite = new AnimatedSprite(textureArray);
-	// 	this.animatedSprite.anchor.set(0.5);
-	// 	this.animatedSprite.animationSpeed = 0.5;
-	// 	this.animatedSprite.play();
-
-	// 	// Добавляем animatedSprite на сцену
-	// 	this.addChild(this.animatedSprite);
-	// }
-	// switchAnimation(newTextureArray: Texture[]) {
-	// 	if (this.animatedSprite) {
-	// 		// Меняем массив текстур и перезапускаем анимацию
-	// 		this.animatedSprite.textures = newTextureArray;
-	// 		this.animatedSprite.gotoAndPlay(0); // Начать анимацию с начала
-	// 	}
-	// }
+		return this.healthBar.progress - damage;
+	}
 }
