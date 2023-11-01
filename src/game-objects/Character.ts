@@ -26,20 +26,21 @@ export class Character extends GameObject {
 		const textureArray = await this.getTexture(animationResource);
 
 		this.animatedSprite = new AnimatedSprite(textureArray);
-		this.animatedSprite.anchor.set(0.5);
+		this.animatedSprite.anchor.set(0.5, 0.7);
 		this.animatedSprite.animationSpeed = 0.5;
 		this.animatedSprite.play();
 
 		this.addChild(this.animatedSprite);
 	}
-	async switchAnimation(animationResource: string, isLoop: boolean) {
+	async switchAnimation(animationResource: string, isLoop: boolean, frame: number = 0, needIdle: boolean = true) {
 		if (this.animatedSprite) {
 			const textureArray = await this.getTexture(animationResource);
 			// Меняем массив текстур и перезапускаем анимацию
 			this.animatedSprite.textures = textureArray;
-			this.animatedSprite.gotoAndPlay(0); // Начать анимацию с начала
+			this.animatedSprite.gotoAndPlay(frame); // Начать анимацию с начала
+
 			this.animatedSprite.loop = isLoop;
-			if (!isLoop)
+			if (needIdle)
 				this.animatedSprite.onComplete = () => {
 					this.idle();
 				};

@@ -33,6 +33,8 @@ export class Aim extends GameObject {
 		super(world, x, y, scale); // Вызываем конструктор базового класса
 		this.sprite = new Sprite(Texture.from(aimConfig.image));
 		this._isVisible = false;
+		// this.pivot.set(0.5, 0.5);
+		this.sprite.anchor.set(0.5, 1);
 
 		this.addChild(this.sprite);
 		this.tween = new Tween(this);

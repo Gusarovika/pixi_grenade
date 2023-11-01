@@ -1,6 +1,6 @@
 // region import
 import { Container } from 'pixi.js';
-import { IScene, Manager } from '../managers/GameManager';
+import { IScene } from '../managers/GameManager';
 import { EventManager } from '../managers/EventManager';
 import { UIManager } from '../managers/UIManager';
 import { World } from '../game/World';
@@ -27,7 +27,7 @@ export class GameScene extends Container implements IScene {
 	public startGame() {
 		this.addChild(this.world);
 		this.addChild(this.uiManager);
-		this.uiManager.init(Manager.width, Manager.height);
+		this.uiManager.init();
 		this.world.init();
 	}
 }

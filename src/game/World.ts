@@ -8,6 +8,7 @@ import { Grenade } from '../game-objects/Grenade';
 import { worldConfig, enemyConfig, playerConfig } from '../gameConfig';
 import * as particles from '@pixi/particle-emitter';
 import * as particleSettings from '../particle-emitters/emitter.json';
+import { Background } from '../game-objects/Background';
 
 enum GameState {
 	Charge,
@@ -19,7 +20,9 @@ enum GameState {
 export class World extends Container {
 	private player: Player;
 	private enemy: Enemy;
-	private floor: Sprite;
+	private borderUp: Sprite;
+	private borderDown: Sprite;
+
 	// public width: number;
 	private enemyDamaged: boolean = false;
 	public explosionContainer: Container;
@@ -35,24 +38,24 @@ export class World extends Container {
 
 		this.enemy = new Enemy(this, worldConfig.enemyPosition.x, worldConfig.enemyPosition.y, enemyConfig.scale);
 		this.player = new Player(this, worldConfig.playerPosition.x, worldConfig.playerPosition.y, playerConfig.scale);
-		this.floor = Sprite.from(worldConfig.floor);
+		this.borderUp = Sprite.from(worldConfig.border);
+		this.borderDown = Sprite.from(worldConfig.border);
+
 		this.eventManager = eventManager;
 		const explosionContainer = new Container();
 		explosionContainer.zIndex = 100;
 		const upgradedConfig = particles.upgradeConfig(particleSettings, 'particle');
 
-		this.addChild(explosionContainer);
-		// explosionContainer.position.set(400, 400);
-		this.explosionContainer = explosionContainer; // Store a reference for later use
+		// this.addChild(explosionContainer);
+		this.explosionContainer = explosionContainer;
 
 		this.emitter = new particles.Emitter(explosionContainer, upgradedConfig);
-		// this.emitter.autoUpdate = true;
-		// this.emitter.emit = true;
 
 		this.gameState = GameState.PlayerTurn;
 		this.eventManager.subscribe('explosion', this.onExplosion, this);
 		this.eventManager.subscribe('throw', this.onThrow, this);
 		this.eventManager.subscribe('select', this.onSelect, this);
+		this.eventManager.subscribe('gameEnd', this.onGameEnd, this);
 
 		this.enemyDamaged = false;
 	}
@@ -60,16 +63,19 @@ export class World extends Container {
 	init() {
 		this.setBackground();
 		this.addChild(this.explosionContainer);
+		this.setBorder(this.borderDown, worldConfig.borderDown);
 		this.createGameObject(this.player);
 		this.player.setAnimation(playerConfig.animations.idle);
 		this.createGameObject(this.enemy);
 
 		this.enemy.setAnimation(enemyConfig.animations.idle);
+		this.setBorder(this.borderUp, worldConfig.borderUp);
 
 		// this.gameObjects.push(this.player);
 	}
 	restart() {}
 	onExplosion() {
+		this.testCollision();
 		if (this.gameState === GameState.GrenadeLaunched) {
 			this.gameState = GameState.PlayerTurn;
 			this.player.toggleAim(false);
@@ -84,51 +90,67 @@ export class World extends Container {
 			return elem !== go;
 		});
 	}
-	setBackground() {
-		this.floor.anchor.set(0.5);
-		this.floor.x = worldConfig.floorPosition.x;
-		this.floor.y = worldConfig.floorPosition.y;
-		this.floor.scale = worldConfig.floorScale;
-		this.addChild(this.floor);
+	setBorder(border: Sprite, config: { position: { x: number; y: number }; scale: { x: number; y: number } }) {
+		border.anchor.set(0.5);
+		border.x = config.position.x;
+		border.y = config.position.y;
+		border.scale.x = config.scale.x;
+		border.scale.y = config.scale.y;
+		this.addChild(border);
 	}
-	onThrow(params: { power: number; texture: Texture; explosion: AnimatedSprite; damage: number }) {
+	setBackground() {
+		const textures = [
+			Texture.from(worldConfig.tile),
+			Texture.from(worldConfig.tile2),
+			Texture.from(worldConfig.leftTile),
+			Texture.from(worldConfig.rightTile),
+		];
+
+		// Создаем фон
+		new Background(this, textures, 5, 12, worldConfig.floorPosition.x, worldConfig.floorPosition.y);
+	}
+	onThrow(params: { power: number; explosion: AnimatedSprite; damage: number }) {
 		this.gameState = GameState.GrenadeLaunched;
 		this.enemyDamaged = false;
 
-		this.player.throwGrenade(this.enemy.position, params.power, params.texture, params.explosion, params.damage);
+		this.player.throwGrenade(this.enemy.position, params);
+		// console.log('throw greande', params.damage);
 	}
-	onSelect() {
+	onSelect(texture: Texture) {
 		if (this.gameState === GameState.PlayerTurn) {
 			this.gameState = GameState.Charge;
+			this.player.getGrenade(texture);
+			// this.player.switchAnimation(playerConfig.animations.throw, false, 4, true);
 		}
 	}
 
-	testCollision(object1: GameObject, object2: GameObject): boolean {
-		const bounds1 = object1.getBounds();
-		const bounds2 = object2.getBounds();
-
-		return (
-			bounds1.x < bounds2.x + bounds2.width &&
-			bounds1.x + bounds1.width > bounds2.x &&
-			bounds1.y < bounds2.y + bounds2.height &&
-			bounds1.y + bounds1.height > bounds2.y
-		);
+	onGameEnd() {
+		this.gameState = GameState.GameEnd;
 	}
 
-	update() {
+	testCollision() {
 		if (this.gameState === GameState.GrenadeLaunched && this.grenade) {
+			// if bounds
 			if (!this.enemyDamaged) {
-				let enemyDamaged: boolean = this.testCollision(this.enemy, this.grenade);
+				let borderCollision = this.borderUp.getBounds().contains(this.player.aim.x, this.player.aim.y);
+				if (borderCollision) return;
+				let enemyDamaged: boolean = this.enemy.getBounds().contains(this.player.aim.x, this.player.aim.y);
 				if (enemyDamaged) {
 					this.enemyDamaged = true;
+					this.enemy.switchAnimation(enemyConfig.animations.hit, false);
+
 					const health = this.enemy.toggleHealthBar(this.grenade.damage);
+					// console.log('test collision', enemyDamaged, health);
 					if (health <= 0) {
 						this.gameState = GameState.GameEnd;
-						this.enemy.switchAnimation(enemyConfig.animations.death, false);
-						this.player.switchAnimation(playerConfig.animations.jump, false);
+						this.eventManager.emit('gameEnd', true);
+						this.enemy.switchAnimation(enemyConfig.animations.death, false, 0, false);
+						this.player.switchAnimation(playerConfig.animations.taunt, true);
 					}
 				}
 			}
 		}
 	}
+
+	update() {}
 }

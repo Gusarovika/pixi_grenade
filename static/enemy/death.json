@@ -1,239 +1,359 @@
 {
   "frames": {
-    "Dead__000.png": {
+    "Dying/Wraith_02_Dying_004.png": {
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 292,
-        "h": 494
+        "w": 213,
+        "h": 309
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 27,
+        "x": 140,
+        "y": 35,
+        "w": 213,
+        "h": 309
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dying/Wraith_02_Dying_003.png": {
+      "frame": {
+        "x": 213,
+        "y": 0,
+        "w": 213,
+        "h": 307
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 144,
+        "y": 26,
+        "w": 213,
+        "h": 307
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dying/Wraith_02_Dying_005.png": {
+      "frame": {
+        "x": 0,
+        "y": 309,
+        "w": 214,
+        "h": 306
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 136,
+        "y": 44,
+        "w": 214,
+        "h": 306
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dying/Wraith_02_Dying_011.png": {
+      "frame": {
+        "x": 426,
+        "y": 0,
+        "w": 304,
+        "h": 209
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 59,
+        "y": 159,
+        "w": 304,
+        "h": 209
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dying/Wraith_02_Dying_002.png": {
+      "frame": {
+        "x": 306,
+        "y": 307,
+        "w": 212,
+        "h": 302
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 147,
+        "y": 30,
+        "w": 212,
+        "h": 302
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dying/Wraith_02_Dying_010.png": {
+      "frame": {
+        "x": 0,
+        "y": 523,
+        "w": 300,
+        "h": 218
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 63,
+        "y": 140,
+        "w": 300,
+        "h": 218
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dying/Wraith_02_Dying_006.png": {
+      "frame": {
+        "x": 300,
+        "y": 523,
+        "w": 215,
+        "h": 298
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 131,
+        "y": 53,
+        "w": 215,
+        "h": 298
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dying/Wraith_02_Dying_001.png": {
+      "frame": {
+        "x": 635,
+        "y": 0,
+        "w": 213,
+        "h": 297
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 149,
+        "y": 33,
+        "w": 213,
+        "h": 297
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dying/Wraith_02_Dying_000.png": {
+      "frame": {
+        "x": 635,
+        "y": 297,
+        "w": 212,
+        "h": 289
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 152,
         "y": 37,
-        "w": 292,
-        "h": 494
+        "w": 212,
+        "h": 289
       },
       "sourceSize": {
-        "w": 578,
-        "h": 599
+        "w": 520,
+        "h": 420
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dead__005.png": {
+    "Dying/Wraith_02_Dying_007.png": {
       "frame": {
         "x": 0,
-        "y": 494,
-        "w": 491,
-        "h": 324
+        "y": 741,
+        "w": 219,
+        "h": 281
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 42,
-        "y": 239,
-        "w": 491,
-        "h": 324
+        "x": 123,
+        "y": 70,
+        "w": 219,
+        "h": 281
       },
       "sourceSize": {
-        "w": 578,
-        "h": 599
+        "w": 520,
+        "h": 420
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dead__006.png": {
+    "Dying/Wraith_02_Dying_009.png": {
       "frame": {
-        "x": 292,
+        "x": 598,
+        "y": 586,
+        "w": 274,
+        "h": 228
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 88,
+        "y": 111,
+        "w": 274,
+        "h": 228
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dying/Wraith_02_Dying_008.png": {
+      "frame": {
+        "x": 848,
         "y": 0,
-        "w": 479,
-        "h": 319
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 34,
-        "y": 255,
-        "w": 479,
-        "h": 319
-      },
-      "sourceSize": {
-        "w": 578,
-        "h": 599
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Dead__004.png": {
-      "frame": {
-        "x": 0,
-        "y": 985,
-        "w": 475,
-        "h": 315
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 44,
-        "y": 225,
-        "w": 475,
-        "h": 315
-      },
-      "sourceSize": {
-        "w": 578,
-        "h": 599
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Dead__001.png": {
-      "frame": {
-        "x": 0,
-        "y": 1460,
-        "w": 322,
-        "h": 462
+        "w": 240,
+        "h": 254
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 36,
-        "y": 75,
-        "w": 322,
-        "h": 462
+        "x": 107,
+        "y": 89,
+        "w": 240,
+        "h": 254
       },
       "sourceSize": {
-        "w": 578,
-        "h": 599
+        "w": 520,
+        "h": 420
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dead__002.png": {
+    "Dying/Wraith_02_Dying_012.png": {
       "frame": {
-        "x": 315,
-        "y": 985,
-        "w": 386,
-        "h": 454
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 42,
-        "y": 106,
-        "w": 386,
-        "h": 454
-      },
-      "sourceSize": {
-        "w": 578,
-        "h": 599
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Dead__003.png": {
-      "frame": {
-        "x": 324,
-        "y": 479,
-        "w": 435,
-        "h": 384
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 54,
-        "y": 166,
-        "w": 435,
-        "h": 384
-      },
-      "sourceSize": {
-        "w": 578,
-        "h": 599
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Dead__007.png": {
-      "frame": {
-        "x": 292,
+        "x": 426,
         "y": 0,
-        "w": 479,
-        "h": 319
+        "w": 304,
+        "h": 209
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 34,
-        "y": 255,
-        "w": 479,
-        "h": 319
+        "x": 59,
+        "y": 159,
+        "w": 304,
+        "h": 209
       },
       "sourceSize": {
-        "w": 578,
-        "h": 599
+        "w": 520,
+        "h": 420
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dead__008.png": {
+    "Dying/Wraith_02_Dying_013.png": {
       "frame": {
-        "x": 292,
+        "x": 426,
         "y": 0,
-        "w": 479,
-        "h": 319
+        "w": 304,
+        "h": 209
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 34,
-        "y": 255,
-        "w": 479,
-        "h": 319
+        "x": 59,
+        "y": 159,
+        "w": 304,
+        "h": 209
       },
       "sourceSize": {
-        "w": 578,
-        "h": 599
+        "w": 520,
+        "h": 420
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dead__009.png": {
+    "Dying/Wraith_02_Dying_014.png": {
       "frame": {
-        "x": 292,
+        "x": 426,
         "y": 0,
-        "w": 479,
-        "h": 319
+        "w": 304,
+        "h": 209
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 34,
-        "y": 255,
-        "w": 479,
-        "h": 319
+        "x": 59,
+        "y": 159,
+        "w": 304,
+        "h": 209
       },
       "sourceSize": {
-        "w": 578,
-        "h": 599
+        "w": 520,
+        "h": 420
       },
       "pivot": {
         "x": 0.5,
@@ -247,8 +367,8 @@
     "image": "death.png",
     "format": "RGBA8888",
     "size": {
-      "w": 708,
-      "h": 1922
+      "w": 1088,
+      "h": 960
     },
     "scale": 1
   }

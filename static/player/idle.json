@@ -1,255 +1,303 @@
 {
-	"frames": {
-		"Idle__000.png": {
-			"frame": {
-				"x": 0,
-				"y": 0,
-				"w": 232,
-				"h": 439
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 232,
-				"h": 439
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		},
-		"Idle__001.png": {
-			"frame": {
-				"x": 0,
-				"y": 439,
-				"w": 231,
-				"h": 438
-			},
-			"rotated": false,
-			"trimmed": true,
-			"spriteSourceSize": {
-				"x": 1,
-				"y": 1,
-				"w": 231,
-				"h": 438
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		},
-		"Idle__002.png": {
-			"frame": {
-				"x": 0,
-				"y": 877,
-				"w": 229,
-				"h": 438
-			},
-			"rotated": false,
-			"trimmed": true,
-			"spriteSourceSize": {
-				"x": 3,
-				"y": 1,
-				"w": 229,
-				"h": 438
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		},
-		"Idle__003.png": {
-			"frame": {
-				"x": 0,
-				"y": 1315,
-				"w": 228,
-				"h": 437
-			},
-			"rotated": false,
-			"trimmed": true,
-			"spriteSourceSize": {
-				"x": 4,
-				"y": 2,
-				"w": 228,
-				"h": 437
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		},
-		"Idle__004.png": {
-			"frame": {
-				"x": 0,
-				"y": 1752,
-				"w": 227,
-				"h": 436
-			},
-			"rotated": true,
-			"trimmed": true,
-			"spriteSourceSize": {
-				"x": 5,
-				"y": 3,
-				"w": 227,
-				"h": 436
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		},
-		"Idle__005.png": {
-			"frame": {
-				"x": 228,
-				"y": 1315,
-				"w": 226,
-				"h": 435
-			},
-			"rotated": false,
-			"trimmed": true,
-			"spriteSourceSize": {
-				"x": 6,
-				"y": 4,
-				"w": 226,
-				"h": 435
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		},
-		"Idle__009.png": {
-			"frame": {
-				"x": 0,
-				"y": 439,
-				"w": 231,
-				"h": 438
-			},
-			"rotated": false,
-			"trimmed": true,
-			"spriteSourceSize": {
-				"x": 1,
-				"y": 1,
-				"w": 231,
-				"h": 438
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		},
-		"Idle__008.png": {
-			"frame": {
-				"x": 0,
-				"y": 877,
-				"w": 229,
-				"h": 438
-			},
-			"rotated": false,
-			"trimmed": true,
-			"spriteSourceSize": {
-				"x": 3,
-				"y": 1,
-				"w": 229,
-				"h": 438
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		},
-		"Idle__007.png": {
-			"frame": {
-				"x": 0,
-				"y": 1315,
-				"w": 228,
-				"h": 437
-			},
-			"rotated": false,
-			"trimmed": true,
-			"spriteSourceSize": {
-				"x": 4,
-				"y": 2,
-				"w": 228,
-				"h": 437
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		},
-		"Idle__006.png": {
-			"frame": {
-				"x": 0,
-				"y": 1752,
-				"w": 227,
-				"h": 436
-			},
-			"rotated": true,
-			"trimmed": true,
-			"spriteSourceSize": {
-				"x": 5,
-				"y": 3,
-				"w": 227,
-				"h": 436
-			},
-			"sourceSize": {
-				"w": 232,
-				"h": 439
-			},
-			"pivot": {
-				"x": 0.5,
-				"y": 0.5
-			}
-		}
-	},
-	"meta": {
-		"app": "http://free-tex-packer.com",
-		"version": "0.6.7",
-		"image": "idle.png",
-		"format": "RGBA8888",
-		"size": {
-			"w": 454,
-			"h": 1979
-		},
-		"scale": 1
-	}
+  "frames": {
+    "Idle/Wraith_01_Idle_002.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 194,
+        "h": 287
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 152,
+        "y": 39,
+        "w": 194,
+        "h": 287
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_003.png": {
+      "frame": {
+        "x": 194,
+        "y": 0,
+        "w": 194,
+        "h": 287
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 151,
+        "y": 38,
+        "w": 194,
+        "h": 287
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_001.png": {
+      "frame": {
+        "x": 0,
+        "y": 287,
+        "w": 194,
+        "h": 287
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 152,
+        "y": 40,
+        "w": 194,
+        "h": 287
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_006.png": {
+      "frame": {
+        "x": 388,
+        "y": 0,
+        "w": 196,
+        "h": 286
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 145,
+        "y": 36,
+        "w": 196,
+        "h": 286
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_004.png": {
+      "frame": {
+        "x": 287,
+        "y": 287,
+        "w": 194,
+        "h": 286
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 149,
+        "y": 38,
+        "w": 194,
+        "h": 286
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_005.png": {
+      "frame": {
+        "x": 0,
+        "y": 481,
+        "w": 195,
+        "h": 286
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 147,
+        "y": 37,
+        "w": 195,
+        "h": 286
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_000.png": {
+      "frame": {
+        "x": 286,
+        "y": 481,
+        "w": 193,
+        "h": 285
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 151,
+        "y": 41,
+        "w": 193,
+        "h": 285
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_010.png": {
+      "frame": {
+        "x": 584,
+        "y": 0,
+        "w": 196,
+        "h": 285
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 146,
+        "y": 39,
+        "w": 196,
+        "h": 285
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_011.png": {
+      "frame": {
+        "x": 584,
+        "y": 285,
+        "w": 195,
+        "h": 285
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 148,
+        "y": 40,
+        "w": 195,
+        "h": 285
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_008.png": {
+      "frame": {
+        "x": 0,
+        "y": 676,
+        "w": 197,
+        "h": 284
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 142,
+        "y": 38,
+        "w": 197,
+        "h": 284
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_009.png": {
+      "frame": {
+        "x": 284,
+        "y": 676,
+        "w": 196,
+        "h": 284
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 144,
+        "y": 39,
+        "w": 196,
+        "h": 284
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Wraith_01_Idle_007.png": {
+      "frame": {
+        "x": 571,
+        "y": 570,
+        "w": 196,
+        "h": 284
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 143,
+        "y": 37,
+        "w": 196,
+        "h": 284
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "idle.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 780,
+      "h": 873
+    },
+    "scale": 1
+  }
 }

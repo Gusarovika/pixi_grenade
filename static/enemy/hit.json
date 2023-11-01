@@ -1,115 +1,19 @@
 {
   "frames": {
-    "Idle/Wraith_02_Idle_006.png": {
+    "Hurt/Wraith_02_Hurt_002.png": {
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 213,
-        "h": 291
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 149,
-        "y": 31,
-        "w": 213,
-        "h": 291
-      },
-      "sourceSize": {
-        "w": 520,
-        "h": 420
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle/Wraith_02_Idle_002.png": {
-      "frame": {
-        "x": 213,
-        "y": 0,
-        "w": 213,
-        "h": 291
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 153,
-        "y": 35,
-        "w": 213,
-        "h": 291
-      },
-      "sourceSize": {
-        "w": 520,
-        "h": 420
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle/Wraith_02_Idle_003.png": {
-      "frame": {
-        "x": 0,
-        "y": 291,
-        "w": 213,
-        "h": 291
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 152,
-        "y": 34,
-        "w": 213,
-        "h": 291
-      },
-      "sourceSize": {
-        "w": 520,
-        "h": 420
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle/Wraith_02_Idle_004.png": {
-      "frame": {
-        "x": 291,
-        "y": 291,
-        "w": 213,
-        "h": 291
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 151,
-        "y": 33,
-        "w": 213,
-        "h": 291
-      },
-      "sourceSize": {
-        "w": 520,
-        "h": 420
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle/Wraith_02_Idle_005.png": {
-      "frame": {
-        "x": 426,
-        "y": 0,
-        "w": 213,
-        "h": 291
+        "w": 212,
+        "h": 301
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
         "x": 150,
-        "y": 32,
-        "w": 213,
-        "h": 291
+        "y": 36,
+        "w": 212,
+        "h": 301
       },
       "sourceSize": {
         "w": 520,
@@ -120,20 +24,44 @@
         "y": 0.5
       }
     },
-    "Idle/Wraith_02_Idle_001.png": {
+    "Hurt/Wraith_02_Hurt_001.png": {
+      "frame": {
+        "x": 212,
+        "y": 0,
+        "w": 212,
+        "h": 300
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 154,
+        "y": 36,
+        "w": 212,
+        "h": 300
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hurt/Wraith_02_Hurt_003.png": {
       "frame": {
         "x": 0,
-        "y": 504,
-        "w": 213,
-        "h": 291
+        "y": 301,
+        "w": 214,
+        "h": 293
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 153,
-        "y": 36,
-        "w": 213,
-        "h": 291
+        "x": 138,
+        "y": 39,
+        "w": 214,
+        "h": 293
       },
       "sourceSize": {
         "w": 520,
@@ -144,14 +72,14 @@
         "y": 0.5
       }
     },
-    "Idle/Wraith_02_Idle_000.png": {
+    "Hurt/Wraith_02_Hurt_000.png": {
       "frame": {
-        "x": 291,
-        "y": 504,
+        "x": 424,
+        "y": 0,
         "w": 212,
         "h": 289
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
         "x": 152,
@@ -168,20 +96,20 @@
         "y": 0.5
       }
     },
-    "Idle/Wraith_02_Idle_010.png": {
+    "Hurt/Wraith_02_Hurt_011.png": {
       "frame": {
-        "x": 639,
-        "y": 0,
-        "w": 213,
-        "h": 289
+        "x": 293,
+        "y": 300,
+        "w": 214,
+        "h": 286
       },
-      "rotated": false,
+      "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 150,
-        "y": 35,
-        "w": 213,
-        "h": 289
+        "x": 143,
+        "y": 38,
+        "w": 214,
+        "h": 286
       },
       "sourceSize": {
         "w": 520,
@@ -192,92 +120,164 @@
         "y": 0.5
       }
     },
-    "Idle/Wraith_02_Idle_009.png": {
-      "frame": {
-        "x": 639,
-        "y": 289,
-        "w": 213,
-        "h": 289
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 149,
-        "y": 34,
-        "w": 213,
-        "h": 289
-      },
-      "sourceSize": {
-        "w": 520,
-        "h": 420
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle/Wraith_02_Idle_011.png": {
+    "Hurt/Wraith_02_Hurt_004.png": {
       "frame": {
         "x": 0,
-        "y": 717,
-        "w": 213,
-        "h": 289
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 151,
-        "y": 36,
-        "w": 213,
-        "h": 289
-      },
-      "sourceSize": {
-        "w": 520,
-        "h": 420
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle/Wraith_02_Idle_008.png": {
-      "frame": {
-        "x": 289,
-        "y": 717,
-        "w": 213,
-        "h": 288
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 148,
-        "y": 34,
-        "w": 213,
-        "h": 288
-      },
-      "sourceSize": {
-        "w": 520,
-        "h": 420
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle/Wraith_02_Idle_007.png": {
-      "frame": {
-        "x": 580,
-        "y": 578,
+        "y": 515,
         "w": 214,
-        "h": 288
+        "h": 285
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 127,
+        "y": 41,
+        "w": 214,
+        "h": 285
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hurt/Wraith_02_Hurt_010.png": {
+      "frame": {
+        "x": 293,
+        "y": 514,
+        "w": 215,
+        "h": 284
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 135,
+        "y": 38,
+        "w": 215,
+        "h": 284
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hurt/Wraith_02_Hurt_008.png": {
+      "frame": {
+        "x": 636,
+        "y": 0,
+        "w": 214,
+        "h": 282
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 148,
-        "y": 33,
+        "x": 121,
+        "y": 38,
         "w": 214,
-        "h": 288
+        "h": 282
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hurt/Wraith_02_Hurt_009.png": {
+      "frame": {
+        "x": 636,
+        "y": 282,
+        "w": 214,
+        "h": 282
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 128,
+        "y": 38,
+        "w": 214,
+        "h": 282
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hurt/Wraith_02_Hurt_007.png": {
+      "frame": {
+        "x": 0,
+        "y": 729,
+        "w": 214,
+        "h": 281
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 117,
+        "y": 39,
+        "w": 214,
+        "h": 281
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hurt/Wraith_02_Hurt_006.png": {
+      "frame": {
+        "x": 281,
+        "y": 729,
+        "w": 213,
+        "h": 279
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 115,
+        "y": 41,
+        "w": 213,
+        "h": 279
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hurt/Wraith_02_Hurt_005.png": {
+      "frame": {
+        "x": 560,
+        "y": 729,
+        "w": 214,
+        "h": 278
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 116,
+        "y": 42,
+        "w": 214,
+        "h": 278
       },
       "sourceSize": {
         "w": 520,
@@ -292,11 +292,11 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.7",
-    "image": "idle.png",
+    "image": "hit.png",
     "format": "RGBA8888",
     "size": {
-      "w": 852,
-      "h": 930
+      "w": 850,
+      "h": 943
     },
     "scale": 1
   }

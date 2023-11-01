@@ -1,0 +1,255 @@
+{
+	"frames": {
+		"Jump_Throw__000.png": {
+			"frame": {
+				"x": 0,
+				"y": 0,
+				"w": 297,
+				"h": 415
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 50,
+				"y": 16,
+				"w": 297,
+				"h": 415
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"Jump_Throw__009.png": {
+			"frame": {
+				"x": 415,
+				"y": 0,
+				"w": 300,
+				"h": 412
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 50,
+				"y": 15,
+				"w": 300,
+				"h": 412
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"Jump_Throw__001.png": {
+			"frame": {
+				"x": 827,
+				"y": 0,
+				"w": 301,
+				"h": 408
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 50,
+				"y": 16,
+				"w": 301,
+				"h": 408
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"Jump_Throw__008.png": {
+			"frame": {
+				"x": 1235,
+				"y": 0,
+				"w": 303,
+				"h": 406
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 50,
+				"y": 16,
+				"w": 303,
+				"h": 406
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"Jump_Throw__002.png": {
+			"frame": {
+				"x": 1641,
+				"y": 0,
+				"w": 307,
+				"h": 400
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 49,
+				"y": 17,
+				"w": 307,
+				"h": 400
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"Jump_Throw__007.png": {
+			"frame": {
+				"x": 0,
+				"y": 297,
+				"w": 321,
+				"h": 400
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 35,
+				"y": 17,
+				"w": 321,
+				"h": 400
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"Jump_Throw__003.png": {
+			"frame": {
+				"x": 400,
+				"y": 300,
+				"w": 337,
+				"h": 399
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 22,
+				"y": 18,
+				"w": 337,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"Jump_Throw__004.png": {
+			"frame": {
+				"x": 799,
+				"y": 301,
+				"w": 344,
+				"h": 399
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 15,
+				"y": 18,
+				"w": 344,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"Jump_Throw__006.png": {
+			"frame": {
+				"x": 1198,
+				"y": 303,
+				"w": 349,
+				"h": 399
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 10,
+				"y": 18,
+				"w": 349,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"Jump_Throw__005.png": {
+			"frame": {
+				"x": 1597,
+				"y": 307,
+				"w": 351,
+				"h": 399
+			},
+			"rotated": true,
+			"trimmed": true,
+			"spriteSourceSize": {
+				"x": 8,
+				"y": 18,
+				"w": 351,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 360,
+				"h": 431
+			},
+			"pivot": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		}
+	},
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7",
+		"image": "throw2.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 2041,
+			"h": 658
+		},
+		"scale": 1
+	}
+}

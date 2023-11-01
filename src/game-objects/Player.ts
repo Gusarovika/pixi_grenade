@@ -6,51 +6,36 @@ import { Character } from './Character';
 import { grenadeConfig, aimConfig, playerConfig } from '../gameConfig';
 
 export class Player extends Character {
-	private aim: Aim;
+	public aim: Aim;
+	public grenade: Grenade | null = null;
 
 	constructor(world: World, x: number, y: number, scale: { x: number; y: number }) {
-		super(world, x, y, scale); // Вызываем конструктор базового класса
-		// this.scale.set(-0.18, 0.18);
-
+		super(world, x, y, scale);
 		this.aim = new Aim(this.x, this.y, this.world, aimConfig.scale);
-		this.setAim();
-	}
-	onPlayer() {
-		console.log('PLAYER RECEIVED EVENT');
-	}
-
-	throwGrenade(
-		position: ObservablePoint,
-		power: number,
-		texture: Texture,
-		explosion: AnimatedSprite,
-		damage: number
-	) {
-		const grenade = new Grenade(this.x, this.y, this.world, texture, damage, grenadeConfig.scale);
-
-		this.world.createGameObject(grenade);
-
-		const endPosition = grenade.launch(position, power, explosion);
-		this.aim.position.set(endPosition.x, endPosition.y);
-		this.toggleAim(true);
-		// const aim = new Aim(this.x, this.y, thiss.world, aimConfig.scale);
-
-		if (!this.world.gameObjects.includes(this.aim)) this.world.createGameObject(this.aim);
-		console.log('throw grenade', this.world);
-
-		this.switchAnimation(playerConfig.animations.throw, false);
-	}
-
-	setAim() {
-		// this.aim = new Aim(this.x, this.y, this.world, Texture.from(Textures.Aim), aimConfig.scale);
 		this.aim.alpha = 0;
-		this.aim.zIndex = 1;
-		// this.world.createGameObject(this.aim);
 	}
+
+	getGrenade(texture: Texture) {
+		this.grenade = new Grenade(this.x, this.y, this.world, texture, 0, grenadeConfig.scale);
+
+		this.world.createGameObject(this.grenade);
+	}
+	throwGrenade(position: ObservablePoint, params: { power: number; explosion: AnimatedSprite; damage: number }) {
+		if (this.grenade) {
+			this.grenade.damage = params.damage;
+			const endPosition = this.grenade.launch(position, params.power, params.explosion);
+			this.aim.position.set(endPosition.x, endPosition.y);
+			this.toggleAim(true);
+			if (!this.world.gameObjects.includes(this.aim)) this.world.createGameObject(this.aim);
+		}
+
+		this.switchAnimation(playerConfig.animations.throw, false, 0);
+	}
+
 	toggleAim(isActive: boolean): void {
-		// const opacity = isActive ? 1 : 0;
 		this.aim.isVisible = isActive;
 	}
+
 	override idle() {
 		this.switchAnimation(playerConfig.animations.idle, true);
 	}

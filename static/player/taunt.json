@@ -1,0 +1,447 @@
+{
+  "frames": {
+    "Taunt/Wraith_01_Taunt_000.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 193,
+        "h": 285
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 151,
+        "y": 41,
+        "w": 193,
+        "h": 285
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_001.png": {
+      "frame": {
+        "x": 193,
+        "y": 0,
+        "w": 197,
+        "h": 282
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 146,
+        "y": 40,
+        "w": 197,
+        "h": 282
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_017.png": {
+      "frame": {
+        "x": 0,
+        "y": 285,
+        "w": 197,
+        "h": 281
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 145,
+        "y": 40,
+        "w": 197,
+        "h": 281
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_002.png": {
+      "frame": {
+        "x": 390,
+        "y": 0,
+        "w": 203,
+        "h": 278
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 142,
+        "y": 39,
+        "w": 203,
+        "h": 278
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_016.png": {
+      "frame": {
+        "x": 0,
+        "y": 482,
+        "w": 205,
+        "h": 278
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 141,
+        "y": 39,
+        "w": 205,
+        "h": 278
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_010.png": {
+      "frame": {
+        "x": 281,
+        "y": 282,
+        "w": 206,
+        "h": 276
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 140,
+        "y": 39,
+        "w": 206,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_006.png": {
+      "frame": {
+        "x": 593,
+        "y": 0,
+        "w": 207,
+        "h": 276
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 139,
+        "y": 39,
+        "w": 207,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_007.png": {
+      "frame": {
+        "x": 593,
+        "y": 276,
+        "w": 206,
+        "h": 276
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 140,
+        "y": 39,
+        "w": 206,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_008.png": {
+      "frame": {
+        "x": 0,
+        "y": 687,
+        "w": 206,
+        "h": 276
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 140,
+        "y": 39,
+        "w": 206,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_009.png": {
+      "frame": {
+        "x": 276,
+        "y": 687,
+        "w": 206,
+        "h": 276
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 140,
+        "y": 39,
+        "w": 206,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_004.png": {
+      "frame": {
+        "x": 552,
+        "y": 552,
+        "w": 208,
+        "h": 276
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 138,
+        "y": 39,
+        "w": 208,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_011.png": {
+      "frame": {
+        "x": 800,
+        "y": 0,
+        "w": 206,
+        "h": 276
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 140,
+        "y": 39,
+        "w": 206,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_012.png": {
+      "frame": {
+        "x": 799,
+        "y": 276,
+        "w": 207,
+        "h": 276
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 139,
+        "y": 39,
+        "w": 207,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_013.png": {
+      "frame": {
+        "x": 760,
+        "y": 552,
+        "w": 207,
+        "h": 276
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 139,
+        "y": 39,
+        "w": 207,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_014.png": {
+      "frame": {
+        "x": 0,
+        "y": 893,
+        "w": 208,
+        "h": 276
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 138,
+        "y": 39,
+        "w": 208,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_005.png": {
+      "frame": {
+        "x": 276,
+        "y": 893,
+        "w": 207,
+        "h": 276
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 139,
+        "y": 39,
+        "w": 207,
+        "h": 276
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_015.png": {
+      "frame": {
+        "x": 552,
+        "y": 828,
+        "w": 208,
+        "h": 275
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 138,
+        "y": 39,
+        "w": 208,
+        "h": 275
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Taunt/Wraith_01_Taunt_003.png": {
+      "frame": {
+        "x": 1006,
+        "y": 0,
+        "w": 208,
+        "h": 275
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 138,
+        "y": 39,
+        "w": 208,
+        "h": 275
+      },
+      "sourceSize": {
+        "w": 520,
+        "h": 420
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "taunt.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1214,
+      "h": 1101
+    },
+    "scale": 1
+  }
+}

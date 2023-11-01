@@ -49,8 +49,6 @@ export class LoaderScene extends Container implements IScene {
 
 	private gameLoaded(): void {
 		// Change scene to the game scene!
-		console.log('Game scene  toad');
-
 		Manager.changeScene(new GameScene());
 	}
 

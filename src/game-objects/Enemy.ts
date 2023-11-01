@@ -1,3 +1,4 @@
+import { enemyConfig } from './../gameConfig';
 import { Ticker } from 'pixi.js';
 import { World } from '../game/World';
 import { Character } from './Character';
@@ -13,7 +14,6 @@ export class Enemy extends Character {
 		super(world, x, y, scale);
 		this.healthBar = new ProgressBar({ bg: config.bg, fill: config.fill, progress: config.initProgress });
 		this.healthBar.scale.set(config.scale.x, config.scale.y);
-
 		this.healthBar.y = config.position.y;
 		this.healthBar.x = config.position.x;
 
@@ -33,5 +33,8 @@ export class Enemy extends Character {
 		ticker.start();
 
 		return this.healthBar.progress - damage;
+	}
+	override idle() {
+		this.switchAnimation(enemyConfig.animations.idle, true);
 	}
 }

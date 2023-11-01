@@ -4,32 +4,27 @@ export const GAME_HEIGHT = 800;
 export const backgroundColor = 0x6495ed;
 
 export const playerConfig = {
-	// Player's initial position
-	initialPosition: { x: 100, y: 400 },
-
 	// Player's scale
-	scale: { x: -0.18, y: 0.18 },
+	scale: { x: -0.3, y: 0.3 },
 
 	// Player's animations
 	animations: {
 		idle: 'PlayerIdle',
-		jump: 'PlayerJump',
+		taunt: 'PlayerTaunt',
 		throw: 'PlayerThrow',
 	},
 };
 
 /** Configuration for enemy characters. */
 export const enemyConfig = {
-	// Enemy's initial position
-	initialPosition: { x: 500, y: 400 },
-
 	// Enemy's scale
-	scale: { x: 0.15, y: 0.15 },
+	scale: { x: 0.3, y: 0.3 },
 
 	// Enemy's animations
 	animations: {
 		idle: 'EnemyIdle',
 		death: 'EnemyDeath',
+		hit: 'EnemyHit',
 	},
 };
 
@@ -37,22 +32,38 @@ export const progressBarConfig = {
 	bg: 'progress_bg',
 	fill: 'progress_fill',
 	initProgress: 100,
-	position: { x: -200, y: -400 },
-	scale: { x: 4, y: 4 },
+	position: { x: -100, y: -350 },
+	scale: { x: 3, y: 3 },
 };
 
 export const grenadeConfig = {
-	scale: { x: 0.3, y: 0.3 },
+	scale: { x: 0.25, y: 0.25 },
 };
 
 export const aimConfig = {
 	image: 'Aim',
-	scale: { x: 0.3, y: 0.3 },
+	scale: { x: 0.5, y: 0.5 },
 };
+
 export const worldConfig = {
+	tile: 'tile',
+	tile2: 'tile2',
+	leftTile: 'tile_left',
+	rightTile: 'tile_right',
+
 	floor: 'floor',
-	floorPosition: { x: GAME_WIDTH / 2, y: GAME_HEIGHT * 0.9 },
+	floorPosition: { x: GAME_WIDTH * 0.1, y: GAME_HEIGHT * 0.2 },
 	floorScale: { x: 1.2, y: 1.2 },
-	playerPosition: { x: GAME_WIDTH * 0.7, y: GAME_HEIGHT * 0.5 },
-	enemyPosition: { x: GAME_WIDTH * 0.35, y: GAME_HEIGHT * 0.46 },
+	border: 'border',
+
+	borderUp: {
+		position: { x: GAME_WIDTH * 0.5, y: GAME_HEIGHT * 0.33 },
+		scale: { x: 0.4, y: 0.4 },
+	},
+	borderDown: {
+		position: { x: GAME_WIDTH * 0.5, y: GAME_HEIGHT * 0.6 },
+		scale: { x: 0.4, y: 0.4 },
+	},
+	playerPosition: { x: GAME_WIDTH * 0.5, y: GAME_HEIGHT * 0.65 },
+	enemyPosition: { x: GAME_WIDTH * 0.5, y: GAME_HEIGHT * 0.3 },
 };

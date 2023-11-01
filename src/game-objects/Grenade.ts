@@ -25,7 +25,6 @@ export class Grenade extends GameObject {
 		this.addChild(this.sprite);
 		this.damage = damage;
 		// this.position.set(x, y);
-		this.scale.set(0.4, 0.4);
 		// this.landPosition = landPosition;
 		// this.stage = stage;
 	}
@@ -43,22 +42,39 @@ export class Grenade extends GameObject {
 			this.power
 		);
 		if (!this.isExploded) {
+			// const distance = Math.sqrt((landPosition.x - this.x) ** 2 + (landPosition.y - this.y) ** 2);
+			// const moveYTween = new Tween(this)
+			// 	.to({ y: this.y - distance }, time / 2)
+			// 	.easing(Easing.Cubic.Out)
+			// 	.start();
+			// moveYTween.onComplete(() => {
+			// 	new Tween(this)
+			// 		.to({ y: landPosition.y }, time / 2)
+			// 		.easing(Easing.Cubic.In)
+			// 		.start();
+			// });
+
+			// const moveXTween = new Tween(this).to({ x: landPosition.x, angle: 360 }, time * 1.01).start();
+			// moveXTween.onComplete(() => {
+			// 	this.explode();
+			// });
 			const distance = Math.sqrt((landPosition.x - this.x) ** 2 + (landPosition.y - this.y) ** 2);
 			const moveYTween = new Tween(this)
-				.to({ y: this.y - distance }, time / 2)
+				.to({ x: this.x - distance }, time / 3)
 				.easing(Easing.Cubic.Out)
 				.start();
 			moveYTween.onComplete(() => {
 				new Tween(this)
-					.to({ y: landPosition.y }, time / 2)
+					.to({ x: this.x + distance }, (time * 2) / 3)
 					.easing(Easing.Cubic.In)
 					.start();
 			});
 
-			const moveXTween = new Tween(this).to({ x: landPosition.x, angle: 360 }, time * 1.01).start();
+			const moveXTween = new Tween(this)
+				.to({ y: landPosition.y, angle: 360 }, time * 1.01)
+				.easing(Easing.Cubic.Out)
+				.start();
 			moveXTween.onComplete(() => {
-				console.log('Explosion', this.x, this.y, landPosition.x, landPosition.y);
-
 				this.explode();
 			});
 
@@ -73,45 +89,23 @@ export class Grenade extends GameObject {
 	}
 	explode() {
 		if (!this.isExploded) {
-			// Воспроизвести визуальный эффект взрыва
-			// const explosionContainer = new Container();
-			// explosion.anchor.set(0.5);
-			// explosionContainer.position.set(this.x, this.y);
-			// this.parent.addChild(explosion);
-			// // Удалить гранату
 			this.world.eventManager.emit('explosion', 5);
-			// this.stage.toggleUi(false);
 			this.world.removeGameObject(this);
-			// this.world.addChild(explosionContainer);
-			// const upgradedConfig = particles.upgradeConfig(particleSettings, 'particle');
 
-			// // const emitter = new particles.Emitter(explosionContainer, upgradedConfig);
-			// const emitter = new particles.Emitter(explosionContainer, upgradedConfig);
-			// emitter.autoUpdate = true; // If you keep it false, you have to update your particles yourself.
 			this.world.explosionContainer.position.set(this.position.x, this.position.y);
 			this.world.emitter.emit = true;
 			this.world.emitter.autoUpdate = true;
 
-			// emitter.playOnceAndDestroy();
 			this.parent.removeChild(this);
 			this.isExploded = true;
 			this.setExplosionEffect();
-			// this.world.eventManager.publish();
-			// this.emit('explosion', this.power);
-			// // Сгенерировать событие взрыва для дополнительных действий
-			// explosion.emit('explosion');
 		}
 	}
 	private setExplosionEffect() {
 		if (this.explosionEffect) {
-			// for (let i = 0; i < 50; i++) {
-			// create an explosion AnimatedSprite
-
 			this.explosionEffect.x = this.x;
 			this.explosionEffect.y = this.y;
 			this.explosionEffect.anchor.set(0.5);
-			// this.explosionEffect.rotation = Math.random() * Math.PI;
-			// this.explosionEffect.scale. set(0.75 + Math.random() * 0.5);
 			this.explosionEffect.loop = false;
 			this.explosionEffect.play();
 			this.world.addChild(this.explosionEffect);
@@ -145,6 +139,7 @@ export class Grenade extends GameObject {
 		// Финальные координаты гранаты
 		const finalX = startX + throwPower * Math.cos(throwAngle);
 		const finalY = startY + throwPower * Math.sin(throwAngle);
+		console.log(targetX, targetY, finalX, finalY, throwPower);
 
 		return { x: finalX, y: finalY };
 	}
