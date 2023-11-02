@@ -37,8 +37,6 @@ export class Grenade extends GameObject {
 		// Final grenade coordinates
 		const finalX = startX + throwPower * Math.cos(throwAngle);
 		const finalY = startY + throwPower * Math.sin(throwAngle);
-		console.log(targetX, targetY, finalX, finalY, throwPower);
-
 		return { x: finalX, y: finalY };
 	}
 

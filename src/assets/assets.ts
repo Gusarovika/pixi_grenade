@@ -18,7 +18,7 @@ export const manifest: AssetsManifest = {
 				"grenade4": 'grenade/image_part_004.png',
 				"grenade5": 'grenade/image_part_005.png',
 				"grenade6": 'grenade/image_part_006.png',
-				"border": "border.png",
+				"border": "background/border.png",
 				"tile": "background/tile.png",
 				"tile2": "background/tile_border.png",
 				"tile_left": "background/tile_left.png",
