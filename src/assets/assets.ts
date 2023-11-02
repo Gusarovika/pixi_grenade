@@ -6,11 +6,9 @@ export const manifest: AssetsManifest = {
 		{
 			name: 'texture',
 			assets: {
-				"Player": 'player.png',
-				"Enemy": 'enemy.png',
-				"grenade": 'grenade.png',
-				"Aim": 'aim.png',
-				"floor": 'floor.png',
+				
+			
+				"aim": 'aim.png',
 				"particle": 'particle.png',
 				"progress_fill": 'ui/progress_fill.png',
 				"progress_bg":'ui/progress_bg.png',
@@ -21,10 +19,10 @@ export const manifest: AssetsManifest = {
 				"grenade5": 'grenade/image_part_005.png',
 				"grenade6": 'grenade/image_part_006.png',
 				"border": "border.png",
-				"tile": "tile.png",
-				"tile2": "tile_border.png",
-				"tile_left": "tile_left.png",
-				"tile_right": "tile_right.png"
+				"tile": "background/tile.png",
+				"tile2": "background/tile_border.png",
+				"tile_left": "background/tile_left.png",
+				"tile_right": "background/tile_right.png"
 
 
 			},
@@ -37,6 +35,7 @@ export const manifest: AssetsManifest = {
 				'EnemyHit': 'enemy/hit.json',
 
 				"PlayerTaunt": 'player/taunt.json',
+				"EnemyTaunt": 'enemy/taunt.json',
 				'PlayerIdle': 'player/idle.json',
 				'PlayerThrow': 'player/throw.json',
 				'grenades': 'grenade/texture.json',

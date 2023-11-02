@@ -1,15 +1,15 @@
 import { World } from '../game/World';
 import { Texture, Assets, AnimatedSprite } from 'pixi.js';
 import { GameObject } from './GameObject';
-// import { Resource } from './ENUMS';
 
 export class Character extends GameObject {
 	private animatedSprite: AnimatedSprite | null = null;
 
 	constructor(world: World, x: number, y: number, scale: { x: number; y: number }) {
-		super(world, x, y, scale); // Вызываем конструктор базового класса
+		super(world, x, y, scale);
 	}
 
+	// Load and return an array of textures for the animation.
 	async getTexture(animationResource: string): Promise<Texture[]> {
 		const sheet = Assets.get(animationResource);
 		const resource = Object.keys(sheet.textures).sort();
@@ -20,9 +20,10 @@ export class Character extends GameObject {
 			textureArray.push(texture);
 		}
 		return textureArray;
-		// }
 	}
-	async setAnimation(animationResource: string) {
+
+	// Set the animation of the character using a given animation resource.
+	async setAnimation(animationResource: string): Promise<void> {
 		const textureArray = await this.getTexture(animationResource);
 
 		this.animatedSprite = new AnimatedSprite(textureArray);
@@ -32,19 +33,27 @@ export class Character extends GameObject {
 
 		this.addChild(this.animatedSprite);
 	}
-	async switchAnimation(animationResource: string, isLoop: boolean, frame: number = 0, needIdle: boolean = true) {
+
+	// Switch the animation of the character using a given animation resource.
+	async switchAnimation(animationResource: string, isLoop: boolean, needIdle: boolean = true): Promise<void> {
 		if (this.animatedSprite) {
 			const textureArray = await this.getTexture(animationResource);
-			// Меняем массив текстур и перезапускаем анимацию
 			this.animatedSprite.textures = textureArray;
-			this.animatedSprite.gotoAndPlay(frame); // Начать анимацию с начала
+			this.animatedSprite.play();
 
 			this.animatedSprite.loop = isLoop;
-			if (needIdle)
+			if (needIdle) {
 				this.animatedSprite.onComplete = () => {
 					this.idle();
 				};
+			} else {
+				this.animatedSprite.onComplete = () => {
+					this.animatedSprite && this.animatedSprite.stop();
+				};
+			}
 		}
 	}
+
+	// An empty method intended for implementing character idling.
 	idle() {}
 }

@@ -3,7 +3,7 @@ import { ObservablePoint, Texture, AnimatedSprite } from 'pixi.js';
 import { Grenade } from './Grenade';
 import { Aim } from './Aim';
 import { Character } from './Character';
-import { grenadeConfig, aimConfig, playerConfig } from '../gameConfig';
+import { grenadeConfig, aimConfig, playerConfig } from '../configs/gameConfig';
 
 export class Player extends Character {
 	public aim: Aim;
@@ -15,12 +15,17 @@ export class Player extends Character {
 		this.aim.alpha = 0;
 	}
 
-	getGrenade(texture: Texture) {
+	// Public methods region
+	public getGrenade(texture: Texture): void {
 		this.grenade = new Grenade(this.x, this.y, this.world, texture, 0, grenadeConfig.scale);
 
 		this.world.createGameObject(this.grenade);
 	}
-	throwGrenade(position: ObservablePoint, params: { power: number; explosion: AnimatedSprite; damage: number }) {
+
+	public throwGrenade(
+		position: ObservablePoint,
+		params: { power: number; explosion: AnimatedSprite; damage: number }
+	): void {
 		if (this.grenade) {
 			this.grenade.damage = params.damage;
 			const endPosition = this.grenade.launch(position, params.power, params.explosion);
@@ -29,14 +34,15 @@ export class Player extends Character {
 			if (!this.world.gameObjects.includes(this.aim)) this.world.createGameObject(this.aim);
 		}
 
-		this.switchAnimation(playerConfig.animations.throw, false, 0);
+		this.switchAnimation(playerConfig.animations.throw, false);
 	}
 
-	toggleAim(isActive: boolean): void {
+	public toggleAim(isActive: boolean): void {
 		this.aim.isVisible = isActive;
 	}
 
-	override idle() {
+	public override idle(): void {
 		this.switchAnimation(playerConfig.animations.idle, true);
 	}
+	// endregion
 }

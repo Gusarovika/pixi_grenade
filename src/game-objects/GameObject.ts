@@ -2,8 +2,6 @@ import { Container } from 'pixi.js';
 import { World } from '../game/World';
 
 export class GameObject extends Container {
-	// protected texture: Texture; // Текстура объекта
-	// protected sprite: Sprite; // Спрайт объекта
 	world: World;
 
 	constructor(world: World, x: number, y: number, scale: { x: number; y: number }) {

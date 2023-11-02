@@ -1,5 +1,5 @@
 // Import region
-import * as GameConfig from './gameConfig';
+import * as GameConfig from './configs/gameConfig';
 import { Manager } from './managers/GameManager';
 import { LoaderScene } from './scenes/LoaderScene';
 // endregion

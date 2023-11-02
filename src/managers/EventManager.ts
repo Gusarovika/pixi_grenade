@@ -1,17 +1,18 @@
 export class EventManager {
 	private listeners: { [eventName: string]: Function[] } = {};
 
-	subscribe(eventName: string, listener: Function, context: any) {
+	// Subscribe to an event with a listener and context
+	subscribe(eventName: string, listener: Function, context: any): void {
 		if (!this.listeners[eventName]) {
 			this.listeners[eventName] = [];
 		}
-		// this.listeners[eventName].push(listener);
-		// Используем bind, чтобы привязать контекст к слушателю
+		// Use bind to attach the context to the listener
 		const boundListener = listener.bind(context);
 		this.listeners[eventName].push(boundListener);
 	}
 
-	emit(eventName: string, eventData?: any) {
+	// Emit an event with optional eventData
+	emit(eventName: string, eventData?: any): void {
 		if (this.listeners[eventName]) {
 			for (const listener of this.listeners[eventName]) {
 				listener(eventData);

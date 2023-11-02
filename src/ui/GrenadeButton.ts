@@ -3,10 +3,13 @@ import { UIManager } from '../managers/UIManager';
 import { Tween, Easing, Group } from 'tweedle.js';
 
 export class GrenadeButton extends Container {
+	protected isOver: boolean = false;
+
 	private _isSelected: boolean = false;
-	public _isBlocked: boolean = false;
-	public power: number = 0;
+	private _isBlocked: boolean = false;
 	private scaleTween: Tween<ObservablePoint>;
+
+	public power: number = 0;
 	public isUsed: boolean = false;
 	public sprite: Sprite;
 	public maxPower: number = 0;
@@ -15,7 +18,6 @@ export class GrenadeButton extends Container {
 	public get isSelected() {
 		return this._isSelected;
 	}
-	protected isOver: boolean = false;
 	public set isSelected(value) {
 		if (value !== this._isSelected) {
 			this._isSelected = value;
@@ -43,13 +45,11 @@ export class GrenadeButton extends Container {
 			const alpha = this._isBlocked ? 0.5 : 1;
 			const alphaTween = new Tween(this.sprite).to({ alpha: alpha }, 200).start();
 			group.add(alphaTween);
-			// this.sprite.alpha = this._isBlocked ? 0.5 : 1;
 			new Ticker().add(() => {
 				group.update();
 			});
 		}
 	}
-	// private updat: boolean = false;
 	constructor(
 		private uiManager: UIManager,
 		texture: Texture,
@@ -58,7 +58,6 @@ export class GrenadeButton extends Container {
 		explosionEffect: AnimatedSprite,
 		maxPower: number
 	) {
-		// const texture = PIXI.Texture.from('grenade.png');
 		super();
 		this.sprite = new Sprite(texture);
 		this.uiManager = uiManager;
@@ -71,11 +70,11 @@ export class GrenadeButton extends Container {
 		this.isOver = false;
 		this.sprite.anchor.set(0.5, 0.5);
 		this.addChild(this.sprite);
-
-		this._subscribeEvents();
+		this.subscribeEvents();
 	}
 
-	private _subscribeEvents() {
+	// private methods region
+	private subscribeEvents() {
 		this.on('pointerdown', this.onDown);
 		this.on('pointerup', this.onUp);
 
@@ -84,25 +83,29 @@ export class GrenadeButton extends Container {
 		this.on('pointerout', this.onOut.bind(this));
 	}
 
-	onDown() {
+	private onDown(): void {
 		this.uiManager.selectGrenade(this);
 	}
-	onUp() {
+
+	private onUp(): void {
 		if (this.isSelected) {
 			this.uiManager.deselectGrenade(this.power * 4, this.damage);
 		}
 	}
-	onOver() {
+
+	private onOver(): void {
 		if (this.isOver || this.isUsed || this.isBlocked) return;
 		this.isOver = true;
 		this.scale.set(this.scale.x + 0.1, this.scale.y + 0.1);
 	}
-	onOut() {
+
+	private onOut(): void {
 		if ((this.isSelected && this.isOver) || this.isUsed || this.isBlocked) return;
 		this.isOver = false;
 		this.scale.set(this.scale.x - 0.1, this.scale.y - 0.1);
 	}
-	update(group: Group): void {
+
+	private update(group: Group): void {
 		this.scaleTween
 			.to({ x: this.sprite.scale.x + 0.1, y: this.sprite.scale.y + 0.1 }, 1000)
 			.easing(Easing.Cubic.Out)
@@ -123,12 +126,13 @@ export class GrenadeButton extends Container {
 		}
 	}
 
-	select() {
+	// public methods region
+	public select(): void {
 		if (this.isUsed || this.isBlocked) return;
 		this.isSelected = true;
 	}
 
-	deselect() {
+	public deselect(): void {
 		if (!this.isUsed) this.isUsed = true;
 
 		this.isSelected = false;

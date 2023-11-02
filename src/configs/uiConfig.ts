@@ -1,5 +1,7 @@
-/** Constants for the types of grenades. */
 import { GAME_WIDTH, GAME_HEIGHT } from './gameConfig';
+import { TextStyle } from 'pixi.js';
+
+// Configuration for grenades
 const GRENADE_TYPES = [
 	{
 		name: 'grenade1',
@@ -37,35 +39,42 @@ const GRENADE_TYPES = [
 		power: 0,
 		damage: 35,
 	},
-	// Добавьте данные о других гранатах
 ];
 
-/** Type aliases for grenade types. */
 export type GrenadeType = (typeof GRENADE_TYPES)[number];
 
-const tutorConfig = {
-	textColor: '#00ff99', // Text color (white)
-	tutorialX: GAME_WIDTH / 2, // X-coordinate for tutorial text
+// Configuration for tutor
+export const tutorConfig = {
+	textColor: '#00ff99',
+	tutorialX: GAME_WIDTH / 2,
 	tutorialY: GAME_HEIGHT * 0.1,
-	style: {
-		fontFamily: 'Arial',
-		fontSize: 36,
-		fontStyle: 'italic',
+	style: new TextStyle({
+		fontFamily: 'Tahoma',
+		fontSize: 25,
+		fontStyle: 'normal',
 		fontWeight: 'bold',
-		fill: ['#ffffff', '#00ff99'], // gradient
-		stroke: '#4a1850',
-		strokeThickness: 5,
+		fill: ['ffffff'],
+		letterSpacing: 8,
+		lineJoin: 'round',
+		miterLimit: 1,
+		stroke: '#000000',
+		strokeThickness: 6,
 		dropShadow: true,
+		dropShadowAlpha: 0.3,
 		dropShadowColor: '#000000',
-		dropShadowBlur: 4,
-	},
+		dropShadowBlur: 2,
+	}),
+	tap: 'Tap and hold the greande',
+	win: 'YOU WIN!',
+	loose: 'YOU LOOSE :(',
+	hold: 'Hold to power up',
+	power: 'power: ',
 };
 
-/** Object to store all configuration values for grenades. */
+// Configuration for uiScreen
 export const uiConfig = {
 	grenadeTypes: GRENADE_TYPES,
 	maxPower: 100,
-	tutor: tutorConfig,
 	grenadesX: GAME_WIDTH * 0.5,
 	grenadesY: GAME_HEIGHT * 0.85,
 };

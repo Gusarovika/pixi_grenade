@@ -19,15 +19,18 @@ export class GameScene extends Container implements IScene {
 		this.world = new World(this.eventManager); // Create the game world container.
 		this.startGame(); // Initialize and start the game.
 	}
+	// private methods region
 
-	public update(): void {
-		this.world.update(); // Update the game world.
-	}
-
-	public startGame() {
+	private startGame(): void {
 		this.addChild(this.world);
 		this.addChild(this.uiManager);
 		this.uiManager.init();
 		this.world.init();
 	}
+
+	//endregion
+
+	// public methods region
+	public update(): void {}
+	//endregion
 }

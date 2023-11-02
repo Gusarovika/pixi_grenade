@@ -1,17 +1,13 @@
 import { World } from '../game/World';
 import { Texture, Sprite, Ticker } from 'pixi.js';
-// import { Grenade } from './Grenade';
 import { GameObject } from './GameObject';
-// import Textures from './textures';
-import { aimConfig } from '../gameConfig';
+import { aimConfig } from '../configs/gameConfig';
 import { Tween, Group } from 'tweedle.js';
 
 export class Aim extends GameObject {
-	// protected texture: Texture; // Текстура объекта
 	protected sprite: Sprite;
-	tween: Tween<this>; // Спрайт объекта
+	tween: Tween<this>;
 	protected _isVisible: boolean;
-
 	public set isVisible(v: boolean) {
 		if (this._isVisible !== v) {
 			this._isVisible = v;
@@ -30,10 +26,9 @@ export class Aim extends GameObject {
 	}
 
 	constructor(x: number, y: number, world: World, scale: { x: number; y: number }) {
-		super(world, x, y, scale); // Вызываем конструктор базового класса
+		super(world, x, y, scale);
 		this.sprite = new Sprite(Texture.from(aimConfig.image));
 		this._isVisible = false;
-		// this.pivot.set(0.5, 0.5);
 		this.sprite.anchor.set(0.5, 1);
 
 		this.addChild(this.sprite);
