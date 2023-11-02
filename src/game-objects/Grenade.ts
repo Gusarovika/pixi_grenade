@@ -79,22 +79,22 @@ export class Grenade extends GameObject {
 		);
 		if (!this.isExploded) {
 			const distance = Math.sqrt((landPosition.x - this.x) ** 2 + (landPosition.y - this.y) ** 2);
-			const moveYTween = new Tween(this)
-				.to({ x: this.x - distance }, time / 3)
+			const moveXTween = new Tween(this)
+				.to({ x: this.x - distance / 2 }, time / 3)
 				.easing(Easing.Cubic.Out)
 				.start();
-			moveYTween.onComplete(() => {
+			moveXTween.onComplete(() => {
 				new Tween(this)
-					.to({ x: this.x + distance }, (time * 2) / 3)
+					.to({ x: this.x + distance / 2 }, (time * 2) / 3)
 					.easing(Easing.Cubic.In)
 					.start();
 			});
 
-			const moveXTween = new Tween(this)
+			const moveYTween = new Tween(this)
 				.to({ y: landPosition.y, angle: 360 }, time * 1.01)
 				.easing(Easing.Cubic.Out)
 				.start();
-			moveXTween.onComplete(() => {
+			moveYTween.onComplete(() => {
 				this.explode();
 			});
 
